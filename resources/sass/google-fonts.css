@@ -1,0 +1,7 @@
+/*
+    Google Fonts file
+    apparently the sass compiler gets confused with the multiple semicolons with the new
+    css2 url that google provides. To work around this, you can import a plain css file
+    instead, apparently.
+ */
+@import url('//fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,700;1,400;1,700&display=swap.css');

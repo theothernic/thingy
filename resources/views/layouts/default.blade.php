@@ -9,8 +9,22 @@
 
             <title>the feed.</title>
 
-            <link rel="stylesheet" type="text/css" href="" />
+            <link rel="stylesheet" type="text/css" href="{{ @mix('css/app.css') }}" />
         </head>
 
+        <body>
+
+            <div class="page container">
+                <header class="masthead">
+                    <h1><span class="thin">the</span><span class="thick">feed</span></h1>
+                </header>
+
+                <main>
+                    @yield('content')
+                </main>
+
+            </div>
+
+        </body>
 
     </html>
