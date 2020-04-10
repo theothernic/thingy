@@ -7,7 +7,7 @@
             @foreach ($records as $record)
                 <li>
                     <article id="post-{{ $record->id }}">
-                        <h2 class="title">{{ $record->title }}</h2>
+                        <a href="{{ route('posts.show', $record) }}"><h2 class="title">{{ $record->title }}</a></h2>
 
                         <section class="body">
                             {!! $record->body !!}
