@@ -5,6 +5,6 @@
     {
         public function front()
         {
-            return redirect()->route('posts.index');
+            return app()->call('App\Http\Controllers\PostsController@index');
         }
     }
