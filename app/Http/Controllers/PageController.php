@@ -5,6 +5,6 @@
     {
         public function front()
         {
-            return 'Hello, world';
+            return redirect('posts.index');
         }
     }

@@ -15,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@front');
 
+Route::resources([
+    'posts' => 'PostsController'
+]);
+
+Route::prefix('admin')->group(function () {
+
+});
+
 
 Auth::routes();
