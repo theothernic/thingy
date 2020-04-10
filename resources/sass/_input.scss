@@ -1,0 +1,33 @@
+a.button,
+button,
+input[type=button]
+{
+    background: white;
+    padding: 0.6rem;
+    min-width: 6rem;
+    color: #126799;
+    border: none;
+    border-radius: 0.3rem;
+
+    .light {
+        background: #fafafa;
+    }
+
+
+}
+
+a.button.primary,
+button.primary,
+input[type=button].primary
+{
+    color: white;
+    background: #126799;
+}
+
+a.button.light,
+button.light,
+input[type=button].light
+{
+    background: #dadada;
+    color: initial;
+}

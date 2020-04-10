@@ -1,0 +1,12 @@
+.message {
+    margin: 1rem;
+    padding: 1rem;
+
+    ul {
+        padding: 1rem;
+    }
+}
+.message.warning {
+    background: lightyellow;
+    border: solid 1px goldenrod;
+}
