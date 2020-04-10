@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public routes.
 Route::get('/', 'PageController@front');
-
 Route::resources([
     'posts' => 'PostsController'
 ]);
 
+// Admin/Manager routes.
 Route::prefix('admin')
     ->name('admin.')
     ->middleware('auth')
@@ -30,5 +31,6 @@ Route::prefix('admin')
     ]);
 });
 
-
+// Auth routing.
 Auth::routes();
+Route::get('home', 'Admin\PageController@home')->name('home');

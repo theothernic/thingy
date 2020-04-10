@@ -6,7 +6,7 @@
         @if (isset($records))
             @foreach ($records as $record)
                 <li>
-                    <article id="post-{{ $record->id }}">
+                    <article id="post-{{ $record->id }}" class="summary">
                         <a href="{{ route('posts.show', $record) }}"><h2 class="title">{{ $record->title }}</a></h2>
 
                         <section class="body">

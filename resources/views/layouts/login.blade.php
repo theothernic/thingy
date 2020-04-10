@@ -9,6 +9,7 @@
 
     <title>Login</title>
 
+    <link rel="stylesheet" type="text/css" href="{{ @mix('css/app.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ @mix('css/login.css') }}" />
 </head>
 
@@ -16,7 +17,7 @@
 
     <div class="page container">
 
-        <div class="center-stage">
+        <div class="stage">
             <h1 class="brand">
                 <span class="thin">feed</span>bag.
             </h1>

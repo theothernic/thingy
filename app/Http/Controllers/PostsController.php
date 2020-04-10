@@ -15,9 +15,11 @@
             return view('posts.index', $viewData);
         }
 
-        public function show()
+        public function show($id)
         {
-            $viewData = [];
+            $viewData = [
+                'record' => Post::findOrFail($id)
+            ];
             return view('posts.show', $viewData);
         }
     }
