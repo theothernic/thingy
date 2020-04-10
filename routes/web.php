@@ -33,4 +33,4 @@ Route::prefix('admin')
 
 // Auth routing.
 Auth::routes();
-Route::get('home', 'Admin\PageController@home')->name('home');
+Route::get('home', 'Admin\PageController@home')->middleware('auth')->name('home');
