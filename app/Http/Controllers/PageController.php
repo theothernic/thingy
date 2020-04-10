@@ -5,6 +5,6 @@
     {
         public function front()
         {
-            return redirect('posts.index');
+            return redirect()->route('posts.index');
         }
     }
