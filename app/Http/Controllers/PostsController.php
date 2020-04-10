@@ -11,6 +11,7 @@
             $viewData = [
                 'records' => Post::all()
             ];
+
             return view('posts.index', $viewData);
         }
 
