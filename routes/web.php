@@ -19,8 +19,14 @@ Route::resources([
     'posts' => 'PostsController'
 ]);
 
-Route::prefix('admin')->group(function () {
-
+Route::prefix('admin')
+    ->middleware('auth')
+    ->group(function ()
+{
+    Route::resources([
+        'posts' => 'Admin\PostsController',
+        'users' => 'Admin\UsersController'
+    ]);
 });
 
 

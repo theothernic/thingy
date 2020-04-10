@@ -96,7 +96,9 @@ main {
         }
 
 
-        p {
+        p.body,
+        section.body
+        {
             margin: 0.6rem 1rem;
             line-height: 1.4rem;
         }

@@ -104,7 +104,8 @@ main article h2 {
   color: #304d72;
 }
 
-main article p {
+main article p.body,
+main article section.body {
   margin: 0.6rem 1rem;
   line-height: 1.4rem;
 }
