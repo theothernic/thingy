@@ -2,12 +2,12 @@ a.button,
 button,
 input[type=button]
 {
-    background: white;
+    margin: 0.3rem;
     padding: 0.6rem;
     min-width: 6rem;
-    color: #126799;
     border: none;
     border-radius: 0.3rem;
+    text-decoration: none;
 
     .light {
         background: #fafafa;

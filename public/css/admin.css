@@ -1,3 +1,14 @@
+form {
+  padding: 1rem;
+}
+
+form input {
+  width: 100%;
+  margin: 1rem 0;
+  line-height: 1.4rem;
+  border: solid 1px slategrey;
+}
+
 html,
 body {
   height: 100vh;
@@ -46,5 +57,10 @@ body {
 
 .stage main {
   padding: 1rem;
+}
+
+.stage main .actions {
+  padding: 1.25rem 0;
+  clear: both;
 }
 

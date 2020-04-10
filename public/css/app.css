@@ -12,12 +12,12 @@
 a.button,
 button,
 input[type=button] {
-  background: white;
+  margin: 0.3rem;
   padding: 0.6rem;
   min-width: 6rem;
-  color: #126799;
   border: none;
   border-radius: 0.3rem;
+  text-decoration: none;
 }
 
 a.button .light,
@@ -52,5 +52,12 @@ input[type=button].light {
 .message.warning {
   background: lightyellow;
   border: solid 1px goldenrod;
+}
+
+a.green,
+button.green,
+input[type=button].green {
+  background: seagreen;
+  color: white;
 }
 

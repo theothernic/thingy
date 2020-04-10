@@ -4,19 +4,31 @@
 namespace App\Http\Controllers\Admin;
 
 
+
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\IResourceController;
+use App\Models\Post;
 
 class PostsController extends Controller implements IResourceController
 {
 
     public function index()
     {
-        // TODO: Implement index() method.
+        $viewData = [
+            'records' => Post::all()
+        ];
+
+
+        return view('admin.posts.index');
     }
 
     public function create()
     {
-        // TODO: Implement create() method.
+        $viewData = [
+            'record' => new Post()
+        ];
+
+        return view('admin.posts.create');
     }
 
     public function edit()
