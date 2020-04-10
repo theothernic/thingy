@@ -9,7 +9,7 @@ source ./.env
 
 php artisan down
 npm install
-npm run ${ENV}
+npm run production
 php artisan migrate --force
 
 # 20180907, nbarr: disabling this because it's creating
