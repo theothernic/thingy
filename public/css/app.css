@@ -1,4 +1,4 @@
-@import url(//indestructibletype.com/fonts/Bodoni/Bodoni.css);@import url(//fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,700;1,400;1,700&display=swap.css);/*
+@import url(//indestructibletype.com/fonts/Bodoni/Bodoni.css);@import url(//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@import url(//fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,700;1,400;1,700&display=swap.css);/*
     Google Fonts file
     apparently the sass compiler gets confused with the multiple semicolons with the new
     css2 url that google provides. To work around this, you can import a plain css file
@@ -32,16 +32,17 @@ body {
   width: 100vw;
 }
 
+body {
+  background: slategrey;
+}
+
 a {
-  color: #ec9d28;
+  color: teal;
   text-decoration: none;
 }
 
 a:hover {
   color: #db9566;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #1997dd;
-          text-decoration-color: #1997dd;
 }
 
 header.masthead {
@@ -65,9 +66,13 @@ header.masthead h1 span.thick {
 }
 
 main {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: white;
   font-family: "Chivo";
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #999;
 }
 
@@ -76,15 +81,31 @@ main ul {
 }
 
 main ul li {
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
-main ul li h3 {
+main ul li:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 34%;
+  padding: 1.6rem;
+  border-bottom: solid 1px #dadada;
+}
+
+main ul li:last-child:after {
+  padding: inherit;
+  border: none;
+}
+
+main article h2 {
+  font-family: "Bodoni 11", serif;
   margin: 0.6rem 0;
   color: #304d72;
 }
 
-main ul li p {
+main article p {
   margin: 0.6rem 1rem;
+  line-height: 1.4rem;
 }
 

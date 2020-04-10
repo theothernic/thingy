@@ -14,18 +14,19 @@ html,body {
 
 body {
     //font-family: 'Chivo', 'Helvetica Neue', 'Arial', sans-serif;
-
+    background: slategrey;
 }
 
 a {
-    color: #ec9d28;
+    //color: #ec9d28;
+    color: teal;
     text-decoration: none;
 }
 
 a:hover {
     color: #db9566;
-    text-decoration: underline;
-    text-decoration-color: #1997dd;
+    //text-decoration: underline;
+    //text-decoration-color: #1997dd;
 }
 
 // header.
@@ -54,26 +55,50 @@ header.masthead {
 main {
     @extend .sidebars;
 
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+
+    background: white;
+
     font-family: 'Chivo';
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #999;
 
     ul {
         list-style: none;
 
         li {
-            padding: 2rem;
+            padding: 1rem 2rem;
+        }
 
-            h3 {
-                margin: 0.6rem 0;
-                color: #304d72;
-            }
+        li:after {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 34%;
+            padding: 1.6rem;
+            border-bottom: solid 1px #dadada;
+        }
+
+        li:last-child:after {
+            padding: inherit;
+            border: none;
+        }
+    }
+
+    article {
+        h2 {
+            font-family: 'Bodoni 11', serif;
+            margin: 0.6rem 0;
+            color: #304d72;
+        }
 
 
-            p {
-                margin: 0.6rem 1rem;
-            }
+        p {
+            margin: 0.6rem 1rem;
+            line-height: 1.4rem;
         }
     }
 }
