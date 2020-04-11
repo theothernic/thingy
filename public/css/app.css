@@ -9,12 +9,22 @@
   padding: 0;
 }
 
+a.button {
+  text-align: center;
+  color: #126799;
+  text-decoration: none;
+}
+
+a.button:hover {
+  color: #126799;
+}
+
 a.button,
 button,
 input[type=button] {
+  display: inline-block;
   margin: 0.3rem;
   padding: 0.6rem;
-  min-width: 6rem;
   border: none;
   border-radius: 0.3rem;
   text-decoration: none;
@@ -59,5 +69,42 @@ button.green,
 input[type=button].green {
   background: seagreen;
   color: white;
+}
+
+a.green:visited,
+button.green:visited,
+input[type=button].green:visited {
+  background: seagreen;
+  color: white;
+}
+
+a.red,
+button.red,
+input[type=button].red {
+  background: red;
+  color: white;
+}
+
+a.red:visited,
+button.red:visited,
+input[type=button].red:visited {
+  background: red;
+  color: white;
+}
+
+table {
+  min-width: 100%;
+}
+
+table thead th {
+  background: #857a79;
+}
+
+table thead th.actions {
+  background: none;
+}
+
+table tbody td.actions {
+  text-align: center;
 }
 

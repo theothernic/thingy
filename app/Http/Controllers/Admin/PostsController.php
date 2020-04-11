@@ -6,20 +6,20 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\IResourceController;
+use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
-class PostsController extends Controller implements IResourceController
+class PostsController extends Controller
 {
 
     public function index()
     {
         $viewData = [
-            'records' => Post::all()
+            'records' => Post::paginate(6)
         ];
 
-
-        return view('admin.posts.index');
+        return view('admin.posts.index', $viewData);
     }
 
     public function create()
@@ -28,7 +28,7 @@ class PostsController extends Controller implements IResourceController
             'record' => new Post()
         ];
 
-        return view('admin.posts.create');
+        return view('admin.posts.create', $viewData);
     }
 
     public function edit()
@@ -36,9 +36,10 @@ class PostsController extends Controller implements IResourceController
         // TODO: Implement edit() method.
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        // TODO: Implement destroy() method.
+        Post::destroy($id);
+        return redirect()->route('admin.posts.index');
     }
 
     public function show()
@@ -46,9 +47,19 @@ class PostsController extends Controller implements IResourceController
         // TODO: Implement show() method.
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
-        // TODO: Implement store() method.
+            $data = $request->validated();
+            $data['user_id'] = Auth::user()->id;
+
+            if (!$record = Post::create($data))
+            {
+                throw new \Exception('Could not create post.');
+            }
+
+            return redirect()->route('admin.posts.index');
+
+
     }
 
     public function update()

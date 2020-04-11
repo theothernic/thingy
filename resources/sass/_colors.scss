@@ -5,3 +5,28 @@ input[type=button].green
     background: seagreen;
     color: white;
 }
+
+a.green:visited,
+button.green:visited,
+input[type=button].green:visited
+{
+    background: seagreen;
+    color: white;
+}
+
+
+a.red,
+button.red,
+input[type=button].red
+{
+    background: red;
+    color: white;
+}
+
+a.red:visited,
+button.red:visited,
+input[type=button].red:visited
+{
+    background: red;
+    color: white;
+}

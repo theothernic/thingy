@@ -9,6 +9,14 @@ form input {
   border: solid 1px slategrey;
 }
 
+form label {
+  margin: 0.6rem 0;
+}
+
+form.destroy {
+  display: inline;
+}
+
 html,
 body {
   height: 100vh;
@@ -19,18 +27,11 @@ body {
   font-family: "Chivo", "Helvetica Neue", "Arial", sans-serif;
 }
 
-.page.container {
-  display: flex;
-  min-height: 100%;
-  min-width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
 .stage {
   background: white;
-  min-width: 75%;
-  min-height: 75%;
+  margin: 5rem auto 0 auto;
+  width: 80vw;
+  min-width: 80vw;
   border: solid 1px #dadada;
 }
 
@@ -55,6 +56,15 @@ body {
   font-weight: 700;
 }
 
+.stage nav ul {
+  display: inline;
+  list-style: none;
+}
+
+.stage nav ul li {
+  display: inline-block;
+}
+
 .stage main {
   padding: 1rem;
 }
@@ -62,5 +72,45 @@ body {
 .stage main .actions {
   padding: 1.25rem 0;
   clear: both;
+}
+
+.stage main .pagination nav ul.pagination li.page-item {
+  display: inline-block;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  background: #dadada;
+}
+
+.stage main .pagination nav ul.pagination li.page-item a {
+  display: block;
+  color: #126799;
+  text-decoration: none;
+}
+
+.stage main .pagination nav ul.pagination li.page-item a:visited {
+  color: teal;
+}
+
+.stage main .pagination nav ul.pagination li.page-item a:hover {
+  color: teal;
+}
+
+.stage main .pagination nav ul.pagination li.page-item.active {
+  background: #126799;
+  color: white;
+}
+
+.stage main .pagination nav ul.pagination li.page-item.active a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.stage main .pagination nav ul.pagination li.page-item.active a:visited {
+  color: antiquewhite;
+}
+
+.stage main .pagination nav ul.pagination li.page-item.active a:hover {
+  color: antiquewhite;
 }
 

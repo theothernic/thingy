@@ -1,10 +1,20 @@
+a.button {
+    text-align: center;
+    color: #126799;
+    text-decoration: none;
+}
+
+a.button:hover {
+    color: #126799;
+}
+
 a.button,
 button,
 input[type=button]
 {
+    display: inline-block;
     margin: 0.3rem;
     padding: 0.6rem;
-    min-width: 6rem;
     border: none;
     border-radius: 0.3rem;
     text-decoration: none;

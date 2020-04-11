@@ -9,8 +9,12 @@
 
     <title>Admin</title>
 
+    @yield('scripts')
+
     <link rel="stylesheet" type="text/css" href="{{ @mix('css/app.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ @mix('css/utils.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ @mix('css/admin.css') }}" />
+    @yield('css')
 </head>
 
 <body>
@@ -23,6 +27,23 @@
                 <span class="thin">feed</span>bag.
             </h1>
         </header>
+
+        <nav>
+            <ul>
+                <li><a class="button" href={{ route('home') }}><span class="fa fa-home"></span></a></li>
+                <li><a class="button" href={{ route('admin.posts.index') }}>Posts</a></li>
+                <li><a class="button" href={{ route('admin.users.index') }}>Users</a></li>
+                <li>
+                    <form method="post" action="{{ route('logout') }}">
+                        @csrf
+                        <button>Log Out</button>
+                    </form>
+                </li>
+            </ul>
+
+
+
+        </nav>
 
         <main>
             @yield('content')

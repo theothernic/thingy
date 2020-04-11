@@ -18,3 +18,8 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/admin.scss', 'public/css')
     .version();
 
+mix.styles([
+    'node_modules/font-awesome/css/font-awesome.min.css'
+], 'public/css/utils.css').version();
+
+mix.copyDirectory('node_modules/font-awesome/fonts', 'public/fonts');

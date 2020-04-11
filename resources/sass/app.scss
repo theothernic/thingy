@@ -3,3 +3,28 @@
 @use 'input';
 @use 'messages';
 @use 'colors';
+
+
+
+table {
+    min-width: 100%;
+
+    thead
+    {
+        th {
+            background: #857a79;
+        }
+
+        th.actions {
+            background: none;
+        }
+    }
+
+    tbody
+    {
+        td.actions {
+            text-align: center;
+        }
+    }
+}
+

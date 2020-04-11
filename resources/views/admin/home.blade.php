@@ -14,8 +14,5 @@
 
 
 
-    <form method="post" action="{{ route('logout') }}">
-        @csrf
-        <button>Log Out</button>
-    </form>
+
 @endsection
