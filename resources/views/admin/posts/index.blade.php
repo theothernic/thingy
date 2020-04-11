@@ -19,7 +19,7 @@
                     <td class="post-date">{{ $record->created_at->format('D, M d Y, g:ia') }}</td>
 
                     <td class="actions">
-                        <a class="button light" href="{{ route('admin.posts.show', $record) }}"><span class="fa fa-search"></span></a>
+                        <a class="button light" href="{{ route('admin.posts.edit', $record) }}"><span class="fa fa-pencil"></span></a>
                         <form id="frmPostDestroy{{ $record->id}}" name="frmPostDestroy" class="destroy"
                               method="post" action="{{ route('admin.posts.destroy', $record) }}">
                             @method('DELETE')

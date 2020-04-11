@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,15 @@ class PostsController extends Controller
         return view('admin.posts.index', $viewData);
     }
 
+    public function show($id)
+    {
+        $viewData = [
+            'record' => Post::findOrFail($id)
+        ];
+
+        return view('admin.posts.show', $viewData);
+    }
+
     public function create()
     {
         $viewData = [
@@ -31,9 +41,37 @@ class PostsController extends Controller
         return view('admin.posts.create', $viewData);
     }
 
-    public function edit()
+    public function store(StorePostRequest $request)
     {
-        // TODO: Implement edit() method.
+        $data = $request->validated();
+        $data['user_id'] = Auth::user()->id;
+
+        if (!$record = Post::create($data))
+        {
+            throw new \Exception('Could not create post.');
+        }
+
+        return redirect()->route('admin.posts.index');
+
+
+    }
+
+    public function edit($id)
+    {
+        $viewData = [
+            'record' => Post::findOrFail($id)
+        ];
+
+        return view('admin.posts.edit', $viewData);
+    }
+
+    public function update(UpdatePostRequest $request, $id)
+    {
+        $data = $request->validated();
+        Post::findOrFail($id)->update($data);
+
+
+        return redirect()->route('admin.posts.index');
     }
 
     public function destroy($id)
@@ -42,28 +80,9 @@ class PostsController extends Controller
         return redirect()->route('admin.posts.index');
     }
 
-    public function show()
-    {
-        // TODO: Implement show() method.
-    }
-
-    public function store(StorePostRequest $request)
-    {
-            $data = $request->validated();
-            $data['user_id'] = Auth::user()->id;
-
-            if (!$record = Post::create($data))
-            {
-                throw new \Exception('Could not create post.');
-            }
-
-            return redirect()->route('admin.posts.index');
 
 
-    }
 
-    public function update()
-    {
-        // TODO: Implement update() method.
-    }
+
+
 }

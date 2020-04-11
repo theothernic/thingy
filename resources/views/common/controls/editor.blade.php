@@ -7,7 +7,7 @@
 @append
 
 
-<textarea id="{{ $id }}" name="{{ $name }}"></textarea>
+<textarea id="{{ $id }}" name="{{ $name }}">{{ (isset($value) && !empty($value)) ? $value : '' }}</textarea>
 <script>
     tinymce.init({
         selector: 'textarea',
