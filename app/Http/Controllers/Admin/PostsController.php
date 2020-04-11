@@ -68,7 +68,11 @@ class PostsController extends Controller
     public function update(UpdatePostRequest $request, $id)
     {
         $data = $request->validated();
-        Post::findOrFail($id)->update($data);
+
+        if (!Post::findOrFail($id)->update($data))
+        {
+            throw new \Exception('Could not complete the editing action for this post.');
+        }
 
 
         return redirect()->route('admin.posts.index');

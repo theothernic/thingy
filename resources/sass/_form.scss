@@ -12,6 +12,18 @@ form {
         margin: 0.6rem 0;
     }
 
+    fieldset {
+        margin: 1rem;
+        padding: 2rem;
+        border: solid 1px #ccc;
+
+        legend {
+            padding: 0 1rem;
+            font-family: 'Bodoni 6', serif;
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+    }
 }
 
 

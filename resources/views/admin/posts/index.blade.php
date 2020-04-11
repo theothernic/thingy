@@ -4,6 +4,10 @@
 @section('content')
     <h2>Post List</h2>
 
+    <div class="actions">
+        <a class="green button" href="{{ route('admin.posts.create') }}">Create Post</a>
+    </div>
+
     <table>
         <tbody>
         @if(!isset($records) || $records->isEmpty())

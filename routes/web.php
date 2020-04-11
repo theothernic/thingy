@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public routes.
 Route::get('/', 'PageController@front');
+Route::get('app', 'PageController@singlePage');
 Route::resources([
     'posts' => 'PostsController'
 ]);

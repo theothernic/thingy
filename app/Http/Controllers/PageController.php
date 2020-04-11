@@ -7,4 +7,10 @@
         {
             return app()->call('App\Http\Controllers\PostsController@index');
         }
+
+
+        public function singlePage()
+        {
+            return view('singlePage');
+        }
     }

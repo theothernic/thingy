@@ -13,6 +13,19 @@ form label {
   margin: 0.6rem 0;
 }
 
+form fieldset {
+  margin: 1rem;
+  padding: 2rem;
+  border: solid 1px #ccc;
+}
+
+form fieldset legend {
+  padding: 0 1rem;
+  font-family: "Bodoni 6", serif;
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
 form.destroy {
   display: inline;
 }
