@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .page.container {
   margin: 0 auto;
   width: 34%;
@@ -17,6 +19,8 @@ main {
 
 html,
 body {
+  min-height: 100vh;
+  min-width: 100vw;
   height: 100vh;
   width: 100vw;
 }
@@ -39,18 +43,36 @@ header.masthead {
   color: white;
 }
 
-header.masthead h1 {
+header.masthead h1.brand {
   padding: 0.4rem;
   text-align: center;
   font-family: "Bodoni 11", serif;
   font-style: italic;
 }
 
-header.masthead h1 span.thin {
+header.masthead h1.brand a {
+  color: white;
+  text-decoration: none;
+}
+
+header.masthead h1.brand a:hover {
+  text-decoration: underline;
+  -webkit-text-decoration-color: lightskyblue;
+          text-decoration-color: lightskyblue;
+}
+
+header.masthead h1.brand a:hover:before {
+  padding-right: 0.4rem;
+  content: "\F015";
+  font-family: "FontAwesome";
+  font-style: normal;
+}
+
+header.masthead h1.brand span.thin {
   font-weight: 100;
 }
 
-header.masthead h1 span.thick {
+header.masthead h1.brand span.thick {
   font-weight: 700;
 }
 

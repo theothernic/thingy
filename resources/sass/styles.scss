@@ -1,6 +1,8 @@
 @use 'aux';
 
 html,body {
+    min-height: 100vh;
+    min-width: 100vw;
     height: 100vh;
     width: 100vw;
 }
@@ -27,11 +29,30 @@ header.masthead {
     background: #126799;
     color: white;
 
-    h1 {
+    h1.brand {
         padding: 0.4rem;
         text-align: center;
         font-family: 'Bodoni 11', serif;
         font-style: italic;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        a:hover {
+            text-decoration: underline;
+            text-decoration-color: lightskyblue;
+        }
+
+        a:hover:before {
+            padding-right: 0.4rem;
+            content: "\f015";
+            font-family: "FontAwesome";
+            font-style: normal;
+        }
 
         span.thin {
             font-weight: 100;
