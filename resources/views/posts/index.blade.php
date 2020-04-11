@@ -14,8 +14,10 @@
                         </section>
 
                         <footer>
-                            <div>written by {{ (isset($record->author)) ? $record->author->name : 'Unknown' }},
-                                {{ $record->created_at->format('m/d/Y g:i a') }}</div>
+                            <div>written by {{ (isset($record->author)) ? $record->author->name : 'Unknown' }} on
+                                {{ $record->created_at->format('m/d/Y g:i a') }} &blacksquare;
+                                <a href="{{ route('posts.show', $record) }}"><span class="fa fa-link"></span> Permalink</a>
+                            </div>
                         </footer>
                     </article>
                 </li>
