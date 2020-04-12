@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\User;
 
 class UsersController extends Controller
@@ -21,7 +22,7 @@ class UsersController extends Controller
 
     public function show()
     {
-
+        // TODO: implement show method
     }
 
     public function create()
@@ -33,6 +34,11 @@ class UsersController extends Controller
         return view('admin.users.create', $viewData);
     }
 
+    /**
+     * @param StoreUserRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
     public function store(StoreUserRequest $request)
     {
         $data = $request->validated();
@@ -45,19 +51,32 @@ class UsersController extends Controller
         Return redirect()->route('admin.users.index');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $viewData = [
+            'record' => User::findOrFail($id)
+        ];
 
+        return view('admin.users.edit', $viewData);
     }
 
-    public function update()
+    public function update(UpdateUserRequest $request, $id)
     {
+        $data = $request->validated();
 
+        if (!User::findOrFail($id)->update($data))
+        {
+            throw new \Exception('Could not complete the editing action for this post.');
+        }
+
+
+        return redirect()->route('admin.users.index');
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        // TODO: Implement destroy() method.
+        User::destroy($id);
+        return redirect()->route('admin.users.index');
     }
 
 

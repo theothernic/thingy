@@ -67,7 +67,7 @@ class PostsController extends Controller
 
     public function update(UpdatePostRequest $request, $id)
     {
-        $data = $request->validated();
+       $data = $request->validated();
 
         if (!Post::findOrFail($id)->update($data))
         {
