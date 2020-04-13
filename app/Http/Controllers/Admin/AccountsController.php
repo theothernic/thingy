@@ -24,14 +24,13 @@
          */
         public function create()
         {
-            $twitter = new TwitterService();
-            $twitter->setCallbackUrl();
-
+            $twitter = (new TwitterService())->setCallbackUrl(route('service.callback', ['service' => 'twitter']))
+                ->buildAuthUrl();
 
             $viewData = [
                 'services' => [
                     'twitter' => [
-                        'authorizeUrl' => $twitter->setCallbackUrl(route('services.callback', ['service' => 'twitter']))->buildAuthUrl()
+                        'authorizeUrl' => $twitter->authorizeUrl
                     ]
                 ]
             ];

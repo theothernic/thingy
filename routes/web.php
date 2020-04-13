@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Public routes.
 Route::get('/', 'PageController@front');
 Route::get('app', 'PageController@singlePage');
-Route::get('oauth/{service}/callback', 'ServiceController@callback')->name('service.callback');
+Route::get('oauth/{service}/callback', 'ServicesController@callback')->name('service.callback');
 Route::resources([
     'posts' => 'PostsController'
 ]);

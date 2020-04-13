@@ -4,6 +4,8 @@
 @section('content')
     <h2>Accounts List</h2>
 
+    @include('common.controls.messages')
+
     <div class="actions">
         <a class="green button" href="{{ route('admin.accounts.create') }}">Create Account</a>
     </div>
