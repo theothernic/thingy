@@ -89,7 +89,7 @@
             $this->client = new TwitterOAuth(env('TW_API_KEY'), env('TW_API_SEKRIT'),
                 $this->_vars['requestToken']['oauth_token'], $this->_vars['requestToken']['oauth_token_secret']);
 
-            $this->_vars['accessToken'] = $this->client->oauth('oauth/authorize', $request->get('oauth_verifier'));
+            $this->_vars['accessToken'] = $this->client->oauth('oauth/access_token', ['oauth_verifier' => $request->get('oauth_verifier')]);
 
             return $this;
         }
@@ -102,12 +102,12 @@
         {
             $account = Account::firstOrNew([
                 'service'   => 'twitter',
-                'remote_id' => $this->_vars['access_token']['user_id']
+                'remote_id' => $this->_vars['accessToken']['user_id']
             ]);
 
-            $account->nickname      = $this->_vars['access_token']['screen_name'];
-            $account->token         = $this->_vars['access_token']['oauth_token'];
-            $account->secret        = $this->_vars['access_token']['oauth_token_secret'];
+            $account->nickname      = $this->_vars['accessToken']['screen_name'];
+            $account->token         = $this->_vars['accessToken']['oauth_token'];
+            $account->secret        = $this->_vars['accessToken']['oauth_token_secret'];
 
             if (!$account->save())
             {
