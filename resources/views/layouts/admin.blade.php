@@ -33,6 +33,7 @@
                 <li><a class="button" href={{ route('home') }}><span class="fa fa-home"></span></a></li>
                 <li><a class="button" href={{ route('admin.posts.index') }}>Posts</a></li>
                 <li><a class="button" href={{ route('admin.users.index') }}>Users</a></li>
+                <li><a class="button" href={{ route('admin.accounts.index') }}>Accounts</a></li>
                 <li>
                     <form method="post" action="{{ route('logout') }}">
                         @csrf

@@ -3,7 +3,7 @@
 
     use Abraham\TwitterOAuth\TwitterOAuth;
     use App\Exceptions\FeedbagServiceException;
-    use App\Models\SocialMediaAccount;
+    use App\Models\Account;
     use mysql_xdevapi\Exception;
 
     class TwitterService {
@@ -11,14 +11,15 @@
         private $client;
         private $_vars = [];
 
-        public function __construct(SocialMediaAccount $socialMediaAccount = null)
+        public function __construct(Account $twitterAccount = null)
         {
 
             // if a SocialMediaAccount model is passed in, it means we're already authorized
             // thru twitter, otherwise we're probably trying to run the oauth process.
-            if (isset($socialMediaAccount))
+            if (isset($twitterAccount))
             {
-                $this->client = new TwitterOAuth(env('TW_API_KEY'), env('TW_API_SEKRIT'));
+                $this->client = new TwitterOAuth(env('TW_API_KEY'), env('TW_API_SEKRIT'),
+                    $twitterAccount->token, $twitterAccount->secret);
             }
 
             else

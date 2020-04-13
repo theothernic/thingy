@@ -2,15 +2,19 @@
     namespace App\Models;
 
     use App\Traits\Encryptable;
+    use App\Traits\UsesGuids;
     use Illuminate\Database\Eloquent\Model;
 
-    class SocialMediaAccount extends Model
+    class Account extends Model
     {
         use Encryptable;
+        use UsesGuids;
 
         protected $table = 'accounts';
         protected $primaryKey = 'id';
         protected $fillable = [
+            'remote_id',
+            'nickname',
             'service',
             'token',
             'secret'

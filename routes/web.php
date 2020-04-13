@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Public routes.
 Route::get('/', 'PageController@front');
 Route::get('app', 'PageController@singlePage');
+Route::get('oauth/{service}/callback', 'ServiceController@callback')->name('service.callback');
 Route::resources([
     'posts' => 'PostsController'
 ]);
@@ -27,6 +28,7 @@ Route::prefix('admin')
     ->group(function ()
 {
     Route::resources([
+        'accounts' => 'Admin\AccountsController',
         'posts' => 'Admin\PostsController',
         'users' => 'Admin\UsersController'
     ]);
