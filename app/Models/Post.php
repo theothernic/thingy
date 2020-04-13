@@ -13,6 +13,8 @@
         protected $primaryKey = 'id';
         protected $fillable = [
             'user_id',
+            'account_id',
+            'remote_post_id',
             'title',
             'body',
         ];

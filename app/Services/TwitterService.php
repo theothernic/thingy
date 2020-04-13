@@ -5,6 +5,7 @@
     use App\Exceptions\FeedbagServiceException;
     use App\Models\Account;
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Session;
     use Exception;
 
@@ -13,16 +14,14 @@
         private $client;
         private $_vars = [];
 
-        public function __construct(ServiceConfig $config = null)
+        public function __construct(Account $account = null)
         {
-            $this->config = $config;
-
             // if a SocialMediaAccount model is passed in, it means we're already authorized
             // thru twitter, otherwise we're probably trying to run the oauth process.
-            if (isset($config))
+            if (isset($account))
             {
                 $this->client = new TwitterOAuth(env('TW_API_KEY'), env('TW_API_SEKRIT'),
-                    $config->token, $config->secret);
+                    $account->token, $account->secret);
             }
 
             else
@@ -102,7 +101,8 @@
         {
             $account = Account::firstOrNew([
                 'service'   => 'twitter',
-                'remote_id' => $this->_vars['accessToken']['user_id']
+                'remote_id' => $this->_vars['accessToken']['user_id'],
+                'user_id'   => Auth::user()->id
             ]);
 
             $account->nickname      = $this->_vars['accessToken']['screen_name'];
@@ -115,5 +115,11 @@
             }
 
             return $this;
+        }
+
+
+        public function getTimelineStatusesByUserId($userId)
+        {
+            return $this->client->get('statuses/user_timeline', ['user_id' => $userId]);
         }
     }

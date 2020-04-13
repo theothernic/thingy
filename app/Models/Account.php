@@ -13,6 +13,7 @@
         protected $table = 'accounts';
         protected $primaryKey = 'id';
         protected $fillable = [
+            'user_id',
             'remote_id',
             'nickname',
             'service',

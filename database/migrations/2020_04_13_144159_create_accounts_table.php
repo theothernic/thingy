@@ -15,6 +15,7 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->bigInteger('user_id');
             $table->enum('service', ['facebook', 'twitter', 'telegram', 'instagram', 'twilio', 'google']);
             $table->string('remote_id');
             $table->string('nickname')->nullable();
