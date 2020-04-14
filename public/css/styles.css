@@ -77,6 +77,7 @@ header.masthead h1.brand span.thick {
 }
 
 main {
+  overflow: auto;
   margin: 0;
   padding: 0;
   min-height: 100%;
@@ -107,6 +108,83 @@ main ul li:after {
 main ul li:last-child:after {
   padding: inherit;
   border: none;
+}
+
+main .pagination.posts {
+  height: 2rem;
+}
+
+main .pagination.posts nav ul.pagination {
+  display: inline;
+  list-style: none;
+}
+
+main .pagination.posts nav ul.pagination li:after {
+  content: none;
+}
+
+main .pagination.posts nav ul.pagination li.page-item {
+  display: inline;
+  margin: 0.6rem;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  background: #126799;
+  color: white;
+}
+
+main .pagination.posts nav ul.pagination li.page-item a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+main .pagination.posts nav ul.pagination li.page-item a:visited {
+  color: white;
+}
+
+main .pagination.posts nav ul.pagination li.page-item a:hover {
+  color: white;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #db9566;
+          text-decoration-color: #db9566;
+}
+
+main .pagination.posts nav ul.pagination li.page-item .page-link {
+  height: 1rem;
+}
+
+main .pagination.posts nav ul.pagination li.page-item.disabled {
+  background: #dadada;
+  color: #999999;
+}
+
+main .pagination.posts nav ul.pagination li.page-item:first-of-type {
+  float: left;
+}
+
+main .pagination.posts nav ul.pagination li.page-item:last-of-type {
+  float: right;
+}
+
+main .pagination.posts nav ul.pagination li.page-item.active {
+  background: #126799;
+  color: white;
+}
+
+main .pagination.posts nav ul.pagination li.page-item.active a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+main .pagination.posts nav ul.pagination li.page-item.active a:visited {
+  color: antiquewhite;
+}
+
+main .pagination.posts nav ul.pagination li.page-item.active a:hover {
+  color: antiquewhite;
 }
 
 main article {

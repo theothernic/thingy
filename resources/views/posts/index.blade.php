@@ -27,7 +27,7 @@
         @endif
     </ul>
 
-    <div class="pagination">
+    <div class="pagination posts">
         {{ $records->links() }}
     </div>
 

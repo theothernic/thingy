@@ -69,6 +69,8 @@ header.masthead {
 main {
     @extend .sidebars;
 
+    overflow: auto;
+
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -99,6 +101,86 @@ main {
         li:last-child:after {
             padding: inherit;
             border: none;
+        }
+    }
+
+
+    .pagination.posts
+    {
+        height: 2rem;
+
+        nav {
+            ul.pagination {
+                display: inline;
+                list-style: none;
+
+                li:after {
+                    content: none;
+                }
+
+
+
+                li.page-item {
+                    display: inline;
+                    margin: 0.6rem;
+                    padding: 0.6rem;
+                    border-radius: 0.3rem;
+                    background: #126799;
+                    color: white;
+
+                    a {
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                    a:visited {
+                        color: white;
+                    }
+
+                    a:hover {
+                        color: white;
+                        text-decoration: underline;
+                        text-decoration-color: #db9566;
+                    }
+
+                    .page-link {
+                        height: 1rem;
+                    }
+                }
+
+                li.page-item.disabled {
+                    background: #dadada;
+                    color: #999999;
+                }
+
+                li.page-item:first-of-type {
+                    float: left;
+                }
+                li.page-item:last-of-type {
+                    float: right;
+                }
+
+                li.page-item.active {
+                    background: #126799;
+                    color: white;
+
+                    a {
+                        display: block;
+                        color: white;
+                        text-decoration: none;
+                    }
+                    a:visited {
+                        color: antiquewhite;
+                    }
+
+                    a:hover {
+                        color: antiquewhite;
+                    }
+                }
+            }
         }
     }
 

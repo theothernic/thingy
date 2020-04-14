@@ -19368,11 +19368,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /run/media/nic/SEAGATE/feedbag/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /run/media/nic/SEAGATE/feedbag/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /run/media/nic/SEAGATE/feedbag/resources/sass/styles.scss */"./resources/sass/styles.scss");
-__webpack_require__(/*! /run/media/nic/SEAGATE/feedbag/resources/sass/login.scss */"./resources/sass/login.scss");
-module.exports = __webpack_require__(/*! /run/media/nic/SEAGATE/feedbag/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! /mnt/nfs/base/code/feedbag/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /mnt/nfs/base/code/feedbag/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/nfs/base/code/feedbag/resources/sass/styles.scss */"./resources/sass/styles.scss");
+__webpack_require__(/*! /mnt/nfs/base/code/feedbag/resources/sass/login.scss */"./resources/sass/login.scss");
+module.exports = __webpack_require__(/*! /mnt/nfs/base/code/feedbag/resources/sass/admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })
