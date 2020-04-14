@@ -38,4 +38,11 @@
 
             return view('admin.accounts.create', $viewData);
         }
+
+        public function destroy($id)
+        {
+            Account::destroy($id);
+
+            return redirect()->route('admin.accounts.index');
+        }
     }

@@ -79,7 +79,7 @@
         {
             $this->_vars['requestToken'] = head(Session::get('tw_rq_tok'));
 
-            if ($request->has('oauth_token') && $this->_vars['requestToken']['oauth_token'] !== $request->input('oauth_token'))
+            if ($request->has('oauth_token') && $this->_vars['requestToken']['oauth_token'] !== $request->get('oauth_token'))
             {
                 throw new FeedbagServiceException('There was a problem when trying to validate the Twitter token.');
             }
@@ -88,7 +88,7 @@
             $this->client = new TwitterOAuth(env('TW_API_KEY'), env('TW_API_SEKRIT'),
                 $this->_vars['requestToken']['oauth_token'], $this->_vars['requestToken']['oauth_token_secret']);
 
-            $this->_vars['accessToken'] = $this->client->oauth('oauth/access_token', ['oauth_verifier' => $request->input('oauth_verifier')]);
+            $this->_vars['accessToken'] = $this->client->oauth('oauth/access_token', ['oauth_verifier' => $request->get('oauth_verifier')]);
 
             return $this;
         }
