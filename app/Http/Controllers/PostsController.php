@@ -9,7 +9,7 @@
         public function index()
         {
             $viewData = [
-                'records' => Post::all()
+                'records' => Post::paginate(6)
             ];
 
             return view('posts.index', $viewData);

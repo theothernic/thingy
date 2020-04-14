@@ -27,4 +27,9 @@
         @endif
     </ul>
 
+    <div class="pagination">
+        {{ $records->links() }}
+    </div>
+
+
 @endsection
