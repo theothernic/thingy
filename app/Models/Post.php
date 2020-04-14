@@ -17,6 +17,11 @@
             'remote_post_id',
             'title',
             'body',
+            'posted_at'
+        ];
+
+        protected $dates = [
+            'posted_at'
         ];
 
         public function author()
