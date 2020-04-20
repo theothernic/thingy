@@ -9,7 +9,7 @@
         public function index()
         {
             $viewData = [
-                'records' => Post::simplePaginate(6)
+                'records' => Post::orderBy('posted_at', 'DESC')->simplePaginate(6)
             ];
 
             return view('posts.index', $viewData);
