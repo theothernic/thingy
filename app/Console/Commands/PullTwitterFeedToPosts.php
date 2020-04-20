@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Services\TwitterService;
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 
 class PullTwitterFeedToPosts extends Command
@@ -70,7 +71,8 @@ class PullTwitterFeedToPosts extends Command
                             'account_id'        => $account->id,
                             'remote_post_id'    => $tweet->id_str,
                             'title'             => '...from the Twitter bureau',
-                            'body'              => $tweet->text,
+                            'posted_at'         => Carbon::parse($tweet->created_at)->format('Y-m-d H:i:s'),
+                            'body'              => $tweet->text
                         ]);
                     }
                 }
