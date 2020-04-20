@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Account;
 use App\Models\Post;
 use App\Services\TwitterService;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
@@ -44,10 +45,13 @@ class PullTwitterFeedToPosts extends Command
         //
 
         try {
+            Log::info('[' . self::class . '] Starting command.');
 
+            Log::info('[' . self::class . '] Loading twitter accounts from database.');
             $this->line('Loading Twitter accounts from database.');
             $accounts = Account::where(['service' => 'twitter'])->get();
 
+            Log::info('[' . self::class . '] Starting command.');
             $this->line('Pulling tweets from available accounts.');
             foreach ($accounts as $account)
             {
@@ -59,6 +63,7 @@ class PullTwitterFeedToPosts extends Command
                 {
                     if (!Post::where(['account_id' => $account->id, 'remote_post_id' => $tweet->id_str])->exists())
                     {
+                        Log::info('[' . self::class . '] Creating post from tweet ID: ' . $tweet->id_str);
                         $this->line('Creating post from tweet ID: ' . $tweet->id_str);
                         Post::create([
                             'user_id'           => $account->user_id,
@@ -72,6 +77,7 @@ class PullTwitterFeedToPosts extends Command
             }
 
 
+            Log::info('[' . self::class . '] Finishing command.');
             $this->line('Task completed.');
         }
 
