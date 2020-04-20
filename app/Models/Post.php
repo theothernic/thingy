@@ -37,6 +37,11 @@
             return $this->belongsTo(Account::class, 'account_id');
         }
 
+        public function tags()
+        {
+            return $this->morphToMany(Tag::class, 'taggable');
+        }
+
         public function toFeedItem()
         {
             return FeedItem::create()
