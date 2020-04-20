@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->string('slug');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->morphs('taggable');
             $table->softDeletes();
             $table->timestamps();
         });
