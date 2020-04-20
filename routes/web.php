@@ -37,3 +37,6 @@ Route::prefix('admin')
 // Auth routing.
 Auth::routes();
 Route::get('home', 'Admin\PageController@home')->middleware('auth')->name('home');
+
+// RSS Feed routes.
+Route::feeds();

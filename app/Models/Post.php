@@ -4,8 +4,11 @@
     use App\User;
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\SoftDeletes;
+    use Illuminate\Support\Str;
+    use Spatie\Feed\Feedable;
+    use Spatie\Feed\FeedItem;
 
-    class Post extends Model
+    class Post extends Model implements Feedable
     {
         use SoftDeletes;
 
@@ -27,5 +30,31 @@
         public function author()
         {
             return $this->belongsTo(User::class, 'user_id');
+        }
+
+        public function account()
+        {
+            return $this->belongsTo(Account::class, 'account_id');
+        }
+
+        public function toFeedItem()
+        {
+            return FeedItem::create()
+                ->id($this->id)
+                ->title($this->title)
+                ->summary(Str::limit($this->body, 50))
+                ->updated($this->updated_at)
+                ->link($this->link)
+                ->author($this->author->name);
+        }
+
+        public static function getFeedItems()
+        {
+            return static::all();
+        }
+
+        public function getLinkAttribute()
+        {
+            return route('posts.show', $this);
         }
     }

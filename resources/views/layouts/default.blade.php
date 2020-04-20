@@ -8,6 +8,7 @@
             <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 
             <title>the feed. @yield('title')</title>
+            @include('feed::links')
 
             <link rel="stylesheet" type="text/css" href="{{ @mix('css/app.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ @mix('css/styles.css') }}" />

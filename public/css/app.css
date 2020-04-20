@@ -92,6 +92,15 @@ input[type=button].red:visited {
   color: white;
 }
 
+.tw-blue {
+  color: #1da1f2;
+}
+
+.bg-tw-blue {
+  background: #1da1f2;
+  color: white;
+}
+
 table {
   min-width: 100%;
 }
