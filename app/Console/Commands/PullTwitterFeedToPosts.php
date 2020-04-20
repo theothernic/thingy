@@ -22,7 +22,7 @@ class PullTwitterFeedToPosts extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Pull account twitter feeds and load them in as posts.';
 
     /**
      * Create a new command instance.
