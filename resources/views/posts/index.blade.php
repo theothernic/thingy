@@ -3,7 +3,7 @@
 
 @section('content')
     <ul class="articles list">
-        @if (isset($records))
+        @if (isset($records) && !$records->isEmpty())
             @foreach ($records as $record)
                 <li>
                     <article id="post-{{ $record->id }}" class="summary">
