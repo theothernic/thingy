@@ -3,7 +3,7 @@
 ## What is this?
 A fork of my Feedbag project to do more with custom mini/microblogging and add different sets of customizations. 
 
-This app uses the Laravel framework.
+This app uses the Laravel framework, nothing fancy.
 
 ## Get started
  1. composer install
