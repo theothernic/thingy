@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
@@ -45,6 +46,9 @@ class PostsController extends Controller
     {
         $data = $request->validated();
         $data['user_id'] = Auth::user()->id;
+
+        if (!isset($data['posted_at']))
+            $data['posted_at'] = Carbon::now();
 
         if (!$record = Post::create($data))
         {
