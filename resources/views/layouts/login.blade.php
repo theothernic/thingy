@@ -19,7 +19,7 @@
 
         <div class="stage">
             <h1 class="brand">
-                <span class="thin">feed</span>bag.
+                {{ env('APP_NAME') }}
             </h1>
             @yield('content')
         </div>

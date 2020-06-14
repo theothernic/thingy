@@ -24,7 +24,7 @@
     <div class="stage">
         <header>
             <h1 class="brand">
-                <span class="thin">feed</span>bag.
+                {{ env('APP_NAME') }}
             </h1>
         </header>
 
